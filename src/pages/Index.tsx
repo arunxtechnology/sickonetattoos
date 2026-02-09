@@ -187,10 +187,10 @@ const Index = () => {
               Book Now
             </Link>
             <a
-              href="tel:+17025551234"
+              href="tel:+16263915520"
               className="border border-primary-foreground/50 text-primary-foreground px-8 py-4 font-condensed font-bold text-lg uppercase tracking-wider hover:bg-primary-foreground/10 transition-all"
             >
-              Call (702) 555-1234
+              (626) 391-5520
             </a>
           </div>
         </div>

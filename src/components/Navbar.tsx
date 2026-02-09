@@ -40,7 +40,7 @@ const Navbar = () => {
             </Link>
           ))}
           <a
-            href="tel:+17025551234"
+            href="tel:+16263915520"
             className="flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 font-condensed font-bold uppercase text-sm tracking-wider hover:bg-primary/90 transition-colors"
           >
             <Phone className="w-4 h-4" />
@@ -82,7 +82,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <a
-                href="tel:+17025551234"
+                href="tel:+16263915520"
                 className="flex items-center justify-center gap-2 bg-primary text-primary-foreground px-5 py-3 font-condensed font-bold uppercase tracking-wider mt-2"
               >
                 <Phone className="w-4 h-4" />

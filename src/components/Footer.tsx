@@ -27,7 +27,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="tel:+17025551234"
+                href="tel:+16263915520"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Call us"
               >

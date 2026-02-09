@@ -48,8 +48,8 @@ const ContactSection = () => {
               <Phone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-condensed text-foreground font-bold uppercase tracking-wider mb-1">Phone</h3>
-                <a href="tel:+17025551234" className="text-muted-foreground hover:text-primary transition-colors">
-                  (702) 555-1234
+                <a href="tel:+16263915520" className="text-muted-foreground hover:text-primary transition-colors">
+                  (626) 391-5520
                 </a>
               </div>
             </div>
@@ -96,7 +96,7 @@ const ContactSection = () => {
 
             {/* CTA */}
             <a
-              href="tel:+17025551234"
+              href="tel:+16263915520"
               className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 font-condensed font-bold text-lg uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 animate-pulse-glow"
             >
               <Phone className="w-5 h-5" />

@@ -69,7 +69,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="font-condensed text-foreground font-bold uppercase tracking-wider text-sm mb-1">Phone</h3>
-                      <a href="tel:+17025551234" className="text-muted-foreground text-sm hover:text-primary transition-colors">(702) 555-1234</a>
+                      <a href="tel:+16263915520" className="text-muted-foreground text-sm hover:text-primary transition-colors">(626) 391-5520</a>
                       <p className="text-muted-foreground text-xs mt-1">Call or text for appointments</p>
                     </div>
                   </div>
@@ -98,7 +98,7 @@ const ContactPage = () => {
 
                 {/* Big CTA */}
                 <a
-                  href="tel:+17025551234"
+                  href="tel:+16263915520"
                   className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-condensed font-bold text-lg uppercase tracking-wider hover:bg-primary/90 transition-all animate-pulse-glow"
                 >
                   <Phone className="w-5 h-5" />

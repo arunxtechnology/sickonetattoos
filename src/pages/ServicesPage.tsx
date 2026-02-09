@@ -3,11 +3,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Paintbrush, Layers, CircleDot, Zap, Sparkles, Check, ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import serviceCustom from "@/assets/service-custom.jpg";
-import serviceCoverup from "@/assets/service-coverup.jpg";
-import servicePiercing from "@/assets/service-piercing.jpg";
-import serviceLaser from "@/assets/service-laser.jpg";
-import serviceLaserHair from "@/assets/service-laser-hair.jpg";
+import serviceCustom from "@/assets/tattoo-work-5.jpg";
 
 const services = [
   {
@@ -23,7 +19,7 @@ const services = [
     title: "Tattoo Cover-Ups",
     description: "Got an old tattoo you regret? Our cover-up specialists can transform any unwanted piece into stunning new artwork that you'll love. We also offer combination treatments with laser fading for the most challenging cover-ups.",
     features: ["Expert assessment of existing tattoo", "Creative design solutions", "Laser fading preparation available", "Color matching and blending expertise"],
-    image: serviceCoverup,
+    image: null,
     pricing: "Starting at $200/hour",
   },
   {
@@ -31,7 +27,7 @@ const services = [
     title: "Body Piercing",
     description: "Professional body piercing performed by experienced piercers using sterile, single-use needles. We carry a wide selection of high-quality jewelry from trusted brands.",
     features: ["Sterile single-use equipment", "Premium titanium & gold jewelry", "Aftercare guidance included", "All body locations available"],
-    image: servicePiercing,
+    image: null,
     pricing: "Starting at $40",
   },
   {
@@ -39,7 +35,7 @@ const services = [
     title: "Laser Tattoo Removal",
     description: "Our state-of-the-art Q-switched laser technology safely and effectively removes unwanted tattoos. We offer full removal and partial fading for cover-up preparation.",
     features: ["FDA-approved laser technology", "Safe for all skin types", "Minimal downtime", "Cover-up fading packages available"],
-    image: serviceLaser,
+    image: null,
     pricing: "Starting at $100/session",
   },
   {
@@ -47,7 +43,7 @@ const services = [
     title: "Laser Hair Removal",
     description: "Achieve smooth, hair-free skin with our advanced laser hair removal treatments. Safe, effective, and long-lasting results with our professional-grade equipment.",
     features: ["Advanced diode laser technology", "All body areas treated", "Suitable for most skin types", "Package deals available"],
-    image: serviceLaserHair,
+    image: null,
     pricing: "Starting at $75/session",
   },
 ];

@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Star, Shield, Award, Clock, Paintbrush, Layers, CircleDot, Zap, Sparkles } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
-import studioInterior from "@/assets/studio-interior.jpg";
+import logo from "@/assets/logo.jpg";
 import tattoo1 from "@/assets/thumbnail.jpg";
 import tattoo3 from "@/assets/thumbnail (1).jpg";
 import tattoo5 from "@/assets/tattoo-work-5.jpg";
@@ -62,7 +62,7 @@ const Index = () => {
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
             <AnimatedSection>
-              <img src={studioInterior} alt="Inside Sick One Tattoos" className="w-full aspect-[4/5] object-cover border border-border" />
+              <img src={logo} alt="Sick One Tattoos" className="w-full aspect-square object-contain p-8 bg-black/20 rounded-lg border border-border" />
             </AnimatedSection>
             <AnimatedSection>
               <span className="font-condensed text-primary uppercase tracking-[0.3em] text-sm font-semibold">Our Story</span>

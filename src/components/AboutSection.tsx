@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Shield, Award, Clock } from "lucide-react";
-import studioInterior from "@/assets/studio-interior.jpg";
+import logo from "@/assets/logo.jpg";
 
 const stats = [
   { icon: Award, label: "Years of Experience", value: "15+" },
@@ -26,9 +26,9 @@ const AboutSection = () => {
             className="relative"
           >
             <img
-              src={studioInterior}
-              alt="Inside Sick One Tattoos studio"
-              className="w-full aspect-[4/5] object-cover"
+              src={logo}
+              alt="Sick One Tattoos Logo"
+              className="w-full aspect-square object-contain p-8 bg-black/20 rounded-lg"
             />
             <div className="absolute inset-0 border border-primary/20" />
             <div className="absolute -bottom-4 -right-4 w-full h-full border border-primary/10 -z-10" />

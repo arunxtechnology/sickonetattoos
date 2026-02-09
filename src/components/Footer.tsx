@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Instagram, Phone, MapPin } from "lucide-react";
 
+import logo from "@/assets/logo.jpg";
+
 const footerLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -17,8 +19,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <Link to="/" className="font-display text-2xl tracking-wider text-foreground">
-              SICK ONE <span className="text-primary">TATTOOS</span>
+            <Link to="/" className="inline-block mb-6">
+              <img src={logo} alt="Sick One Tattoos" className="h-16 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm mt-4 leading-relaxed">
               Las Vegas's premier tattoo studio. Award-winning custom tattoos, cover-ups, piercings, and laser services.

@@ -17,13 +17,7 @@ const PageHero = ({ title, highlight, subtitle, showCta = true }: PageHeroProps)
         }} />
       </div>
       <div className="container relative z-10 text-center">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="font-condensed text-primary uppercase tracking-[0.3em] text-sm font-semibold"
-        >
-          Sick One Tattoos
-        </motion.span>
+
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

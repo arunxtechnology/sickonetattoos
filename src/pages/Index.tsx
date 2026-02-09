@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { ArrowRight, Star, Shield, Award, Clock, Paintbrush, Layers, CircleDot, Zap, Sparkles } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import studioInterior from "@/assets/studio-interior.jpg";
-import tattoo1 from "@/assets/tattoo-work-1.jpg";
-import tattoo3 from "@/assets/tattoo-work-3.jpg";
+import tattoo1 from "@/assets/thumbnail.jpg";
+import tattoo3 from "@/assets/thumbnail (1).jpg";
 import tattoo5 from "@/assets/tattoo-work-5.jpg";
 import tattoo8 from "@/assets/tattoo-work-8.jpg";
 

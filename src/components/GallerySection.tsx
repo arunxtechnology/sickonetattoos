@@ -1,12 +1,12 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import tattoo1 from "@/assets/tattoo-work-1.jpg";
-import tattoo2 from "@/assets/tattoo-work-2.jpg";
-import tattoo3 from "@/assets/tattoo-work-3.jpg";
-import tattoo4 from "@/assets/tattoo-work-4.jpg";
+import { useRef } from "react";
+import tattoo1 from "@/assets/348s (11).jpg";
+import tattoo2 from "@/assets/348s (12).jpg";
+import tattoo3 from "@/assets/348s (13).jpg";
+import tattoo4 from "@/assets/348s (14).jpg";
 import tattoo5 from "@/assets/tattoo-work-5.jpg";
 import tattoo6 from "@/assets/tattoo-work-6.jpg";
-import tattoo7 from "@/assets/tattoo-work-7.jpg";
+import tattoo7 from "@/assets/348s.jpg";
 import tattoo8 from "@/assets/tattoo-work-8.jpg";
 
 const galleryItems = [
@@ -23,7 +23,6 @@ const galleryItems = [
 const GallerySection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <section id="gallery" className="py-24 bg-gradient-dark">
@@ -59,18 +58,6 @@ const GallerySection = () => {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
-              <div
-                className={`absolute inset-0 bg-background/70 flex items-end p-4 transition-opacity duration-300 ${
-                  hoveredIndex === i ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <div>
-                  <span className="font-condensed text-primary text-xs uppercase tracking-wider font-semibold">
-                    {item.category}
-                  </span>
-                  <p className="font-body text-sm text-foreground mt-1">{item.alt}</p>
-                </div>
-              </div>
             </motion.div>
           ))}
         </div>

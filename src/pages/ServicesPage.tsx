@@ -3,9 +3,11 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Paintbrush, Layers, CircleDot, Zap, Sparkles, Check, ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import tattoo1 from "@/assets/tattoo-work-1.jpg";
-import tattoo3 from "@/assets/tattoo-work-3.jpg";
-import tattoo7 from "@/assets/tattoo-work-7.jpg";
+import serviceCustom from "@/assets/service-custom.jpg";
+import serviceCoverup from "@/assets/service-coverup.jpg";
+import servicePiercing from "@/assets/service-piercing.jpg";
+import serviceLaser from "@/assets/service-laser.jpg";
+import serviceLaserHair from "@/assets/service-laser-hair.jpg";
 
 const services = [
   {
@@ -13,7 +15,7 @@ const services = [
     title: "Custom Tattoos",
     description: "Every tattoo we create is a one-of-a-kind masterpiece, designed specifically for you. Our artists specialize in every major style and work closely with you from concept to completion.",
     features: ["Free design consultation", "Custom artwork included", "All styles: realism, traditional, Japanese, fine line, geometric, watercolor", "Touch-ups included within 90 days"],
-    image: tattoo1,
+    image: serviceCustom,
     pricing: "Starting at $150/hour",
   },
   {
@@ -21,7 +23,7 @@ const services = [
     title: "Tattoo Cover-Ups",
     description: "Got an old tattoo you regret? Our cover-up specialists can transform any unwanted piece into stunning new artwork that you'll love. We also offer combination treatments with laser fading for the most challenging cover-ups.",
     features: ["Expert assessment of existing tattoo", "Creative design solutions", "Laser fading preparation available", "Color matching and blending expertise"],
-    image: tattoo7,
+    image: serviceCoverup,
     pricing: "Starting at $200/hour",
   },
   {
@@ -29,7 +31,7 @@ const services = [
     title: "Body Piercing",
     description: "Professional body piercing performed by experienced piercers using sterile, single-use needles. We carry a wide selection of high-quality jewelry from trusted brands.",
     features: ["Sterile single-use equipment", "Premium titanium & gold jewelry", "Aftercare guidance included", "All body locations available"],
-    image: null,
+    image: servicePiercing,
     pricing: "Starting at $40",
   },
   {
@@ -37,7 +39,7 @@ const services = [
     title: "Laser Tattoo Removal",
     description: "Our state-of-the-art Q-switched laser technology safely and effectively removes unwanted tattoos. We offer full removal and partial fading for cover-up preparation.",
     features: ["FDA-approved laser technology", "Safe for all skin types", "Minimal downtime", "Cover-up fading packages available"],
-    image: null,
+    image: serviceLaser,
     pricing: "Starting at $100/session",
   },
   {
@@ -45,7 +47,7 @@ const services = [
     title: "Laser Hair Removal",
     description: "Achieve smooth, hair-free skin with our advanced laser hair removal treatments. Safe, effective, and long-lasting results with our professional-grade equipment.",
     features: ["Advanced diode laser technology", "All body areas treated", "Suitable for most skin types", "Package deals available"],
-    image: null,
+    image: serviceLaserHair,
     pricing: "Starting at $75/session",
   },
 ];
@@ -73,35 +75,37 @@ const ServicesPage = () => {
       <PageHero title="Our" highlight="Services" subtitle="From custom tattoos to laser treatments — everything you need under one roof." />
 
       {/* Services Detail */}
-      <section className="py-24 bg-gradient-dark">
-        <div className="container space-y-20">
+      <section className="py-12 md:py-24 bg-gradient-dark overflow-hidden">
+        <div className="container space-y-16 md:space-y-20">
           {services.map((service, i) => (
             <AnimSection key={service.title}>
-              <div className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "md:direction-rtl" : ""}`}>
-                <div className={i % 2 === 1 ? "md:order-2" : ""}>
-                  <service.icon className="w-12 h-12 text-primary mb-4" />
-                  <h2 className="font-display text-3xl md:text-5xl mb-4">{service.title}</h2>
-                  <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
+              <div className={`flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center ${i % 2 === 1 ? "md:direction-rtl" : ""}`}>
+                <div className={`order-2 md:order-1 ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                  <service.icon className="w-10 h-10 md:w-12 md:h-12 text-primary mb-4" />
+                  <h2 className="font-display text-2xl md:text-3xl lg:text-5xl mb-4">{service.title}</h2>
+                  <p className="text-muted-foreground leading-relaxed mb-6 text-sm md:text-base">{service.description}</p>
                   <ul className="space-y-3 mb-6">
                     {service.features.map((f) => (
-                      <li key={f} className="flex items-center gap-3 text-sm text-muted-foreground">
-                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                        {f}
+                      <li key={f} className="flex items-start md:items-center gap-3 text-sm text-muted-foreground">
+                        <Check className="w-4 h-4 text-primary flex-shrink-0 mt-1 md:mt-0" />
+                        <span>{f}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="flex items-center gap-6">
-                    <span className="font-condensed text-primary font-bold uppercase tracking-wider">{service.pricing}</span>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+                    <span className="font-condensed text-primary font-bold uppercase tracking-wider text-sm md:text-base">{service.pricing}</span>
                     <Link to="/contact" className="inline-flex items-center gap-2 text-foreground font-condensed font-bold uppercase tracking-wider text-sm hover:text-primary transition-colors">
                       Book Now <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
-                <div className={`${i % 2 === 1 ? "md:order-1" : ""}`}>
+                <div className={`order-1 md:order-2 w-full ${i % 2 === 1 ? "md:order-1" : ""}`}>
                   {service.image ? (
-                    <img src={service.image} alt={service.title} className="w-full aspect-square object-cover border border-border" />
+                    <div className="aspect-video md:aspect-square overflow-hidden rounded-lg border border-border/50">
+                      <img src={service.image} alt={service.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
                   ) : (
-                    <div className="w-full aspect-square bg-secondary border border-border flex items-center justify-center">
+                    <div className="w-full aspect-video md:aspect-square bg-secondary border border-border flex items-center justify-center rounded-lg">
                       <service.icon className="w-24 h-24 text-primary/20" />
                     </div>
                   )}

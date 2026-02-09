@@ -1,54 +1,40 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import PageHero from "@/components/PageHero";
-// Imports for gallery images
-import tattoo1 from "@/assets/348s (15).jpg";
-import tattoo2 from "@/assets/348s (16).jpg";
-import tattoo3 from "@/assets/348s (17).jpg";
-import tattoo4 from "@/assets/348s (18).jpg";
-import tattoo5 from "@/assets/348s (19).jpg";
-import tattoo6 from "@/assets/348s (20).jpg";
-import tattoo7 from "@/assets/348s (21).jpg";
-import tattoo8 from "@/assets/348s (22).jpg";
-import tattoo9 from "@/assets/348s (23).jpg";
-import tattoo10 from "@/assets/348s (24).jpg";
-import tattoo11 from "@/assets/348s (25).jpg";
-import tattoo12 from "@/assets/348s (26).jpg";
-import tattoo13 from "@/assets/348s (27).jpg";
-import tattoo14 from "@/assets/348s (28).jpg";
-import tattoo15 from "@/assets/348s (29).jpg";
-import tattoo16 from "@/assets/348s (30).jpg";
-
-const galleryItems = [
-  { src: tattoo1, alt: "Custom Tattoo Art 1" },
-  { src: tattoo2, alt: "Custom Tattoo Art 2" },
-  { src: tattoo3, alt: "Custom Tattoo Art 3" },
-  { src: tattoo4, alt: "Custom Tattoo Art 4" },
-  { src: tattoo5, alt: "Custom Tattoo Art 5" },
-  { src: tattoo6, alt: "Custom Tattoo Art 6" },
-  { src: tattoo7, alt: "Custom Tattoo Art 7" },
-  { src: tattoo8, alt: "Custom Tattoo Art 8" },
-  { src: tattoo9, alt: "Custom Tattoo Art 9" },
-  { src: tattoo10, alt: "Custom Tattoo Art 10" },
-  { src: tattoo11, alt: "Custom Tattoo Art 11" },
-  { src: tattoo12, alt: "Custom Tattoo Art 12" },
-  { src: tattoo13, alt: "Custom Tattoo Art 13" },
-  { src: tattoo14, alt: "Custom Tattoo Art 14" },
-  { src: tattoo15, alt: "Custom Tattoo Art 15" },
-  { src: tattoo16, alt: "Custom Tattoo Art 16" },
-];
 
 const GalleryPage = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
+  const galleryItems = useMemo(() => {
+    // Dynamically load all jpg images from assets
+    const images = import.meta.glob('@/assets/*.{jpg,jpeg,png}', {
+      eager: true,
+      query: '?url',
+      import: 'default'
+    });
+
+    // Convert to array and filter
+    return Object.entries(images)
+      .filter(([path]) => {
+        // Exclude specific system/layout images
+        const filename = path.split('/').pop()?.toLowerCase() || '';
+        return !filename.includes('logo') &&
+          !filename.includes('hero-bg') &&
+          !filename.includes('studio-interior');
+      })
+      .map(([path, src]) => ({
+        src: src as string,
+        alt: path.split('/').pop()?.replace(/\.[^/.]+$/, "").replace(/-/g, " ") || "Gallery Image"
+      }));
+  }, []);
+
   return (
     <>
-      <PageHero title="Our" highlight="Gallery" subtitle="Browse our portfolio of custom tattoo work across every style — from bold traditional to delicate fine line." showCta={false} />
+      <PageHero title="Our" highlight="Gallery" subtitle="Browse our complete portfolio of custom tattoo work, piercings, and studio life." showCta={false} />
 
       <section className="py-24 bg-gradient-dark" ref={ref}>
         <div className="container">
-          {/* Grid */}
           <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {galleryItems.map((item, i) => (
               <motion.div

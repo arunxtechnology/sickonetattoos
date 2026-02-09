@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { Paintbrush, Layers, CircleDot, Zap, Sparkles, Check, ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import serviceCustom from "@/assets/tattoo-work-5.jpg";
+import servicePiercing from "@/assets/piercing.jpg";
+import serviceTattooRemoval from "@/assets/tattoremoval.jpg";
+import serviceHairRemoval from "@/assets/hairremoval.jpg";
 
 const services = [
   {
@@ -27,7 +30,7 @@ const services = [
     title: "Body Piercing",
     description: "Professional body piercing performed by experienced piercers using sterile, single-use needles. We carry a wide selection of high-quality jewelry from trusted brands.",
     features: ["Sterile single-use equipment", "Premium titanium & gold jewelry", "Aftercare guidance included", "All body locations available"],
-    image: null,
+    image: servicePiercing,
     pricing: "Starting at $40",
   },
   {
@@ -35,7 +38,7 @@ const services = [
     title: "Laser Tattoo Removal",
     description: "Our state-of-the-art Q-switched laser technology safely and effectively removes unwanted tattoos. We offer full removal and partial fading for cover-up preparation.",
     features: ["FDA-approved laser technology", "Safe for all skin types", "Minimal downtime", "Cover-up fading packages available"],
-    image: null,
+    image: serviceTattooRemoval,
     pricing: "Starting at $100/session",
   },
   {
@@ -43,7 +46,7 @@ const services = [
     title: "Laser Hair Removal",
     description: "Achieve smooth, hair-free skin with our advanced laser hair removal treatments. Safe, effective, and long-lasting results with our professional-grade equipment.",
     features: ["Advanced diode laser technology", "All body areas treated", "Suitable for most skin types", "Package deals available"],
-    image: null,
+    image: serviceHairRemoval,
     pricing: "Starting at $75/session",
   },
 ];

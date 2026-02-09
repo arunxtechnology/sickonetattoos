@@ -1,36 +1,42 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#home" className="font-display text-2xl md:text-3xl tracking-wider text-foreground">
+        <Link to="/" className="font-display text-2xl md:text-3xl tracking-wider text-foreground">
           SICK ONE <span className="text-primary">TATTOOS</span>
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              className="font-condensed text-sm font-semibold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors duration-300"
+              to={link.href}
+              className={`font-condensed text-sm font-semibold uppercase tracking-widest transition-colors duration-300 ${
+                location.pathname === link.href
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-primary"
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="tel:+17025551234"
@@ -62,14 +68,18 @@ const Navbar = () => {
           >
             <div className="container py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="font-condensed text-lg font-semibold uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
+                  className={`font-condensed text-lg font-semibold uppercase tracking-widest transition-colors ${
+                    location.pathname === link.href
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-primary"
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 href="tel:+17025551234"

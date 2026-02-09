@@ -1,18 +1,17 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Star, MapPin } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroBg} alt="Sick One Tattoos studio" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/80" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
       </div>
 
-      {/* Content */}
       <div className="container relative z-10 pt-20 pb-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,18 +57,18 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="bg-primary text-primary-foreground px-8 py-4 font-condensed font-bold text-lg uppercase tracking-wider hover:bg-primary/90 transition-all duration-300 animate-pulse-glow"
           >
             Book an Appointment
-          </a>
-          <a
-            href="#gallery"
+          </Link>
+          <Link
+            to="/gallery"
             className="border border-foreground/30 text-foreground px-8 py-4 font-condensed font-bold text-lg uppercase tracking-wider hover:border-primary hover:text-primary transition-all duration-300"
           >
             View Our Work
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div

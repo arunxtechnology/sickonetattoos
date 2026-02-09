@@ -7,6 +7,7 @@ import serviceCustom from "@/assets/tattoo-work-5.jpg";
 import servicePiercing from "@/assets/piercing.jpg";
 import serviceTattooRemoval from "@/assets/tattoremoval.jpg";
 import serviceHairRemoval from "@/assets/hairremoval.jpg";
+import serviceCoverup from "@/assets/tattoocoverup.jpg";
 
 const services = [
   {
@@ -22,7 +23,7 @@ const services = [
     title: "Tattoo Cover-Ups",
     description: "Got an old tattoo you regret? Our cover-up specialists can transform any unwanted piece into stunning new artwork that you'll love. We also offer combination treatments with laser fading for the most challenging cover-ups.",
     features: ["Expert assessment of existing tattoo", "Creative design solutions", "Laser fading preparation available", "Color matching and blending expertise"],
-    image: null,
+    image: serviceCoverup,
     pricing: "Starting at $200/hour",
   },
   {

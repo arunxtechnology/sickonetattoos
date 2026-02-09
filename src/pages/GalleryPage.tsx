@@ -1,29 +1,41 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import PageHero from "@/components/PageHero";
-import tattoo1 from "@/assets/348s (6).jpg";
-import tattoo2 from "@/assets/348s (7).jpg";
-import tattoo3 from "@/assets/348s (8).jpg";
-import tattoo4 from "@/assets/348s (9).jpg";
-import tattoo5 from "@/assets/tattoo-work-5.jpg";
-import tattoo6 from "@/assets/tattoo-work-6.jpg";
-import tattoo7 from "@/assets/348s (10).jpg";
-import tattoo8 from "@/assets/tattoo-work-8.jpg";
+// Imports for gallery images
+import tattoo1 from "@/assets/348s (15).jpg";
+import tattoo2 from "@/assets/348s (16).jpg";
+import tattoo3 from "@/assets/348s (17).jpg";
+import tattoo4 from "@/assets/348s (18).jpg";
+import tattoo5 from "@/assets/348s (19).jpg";
+import tattoo6 from "@/assets/348s (20).jpg";
+import tattoo7 from "@/assets/348s (21).jpg";
+import tattoo8 from "@/assets/348s (22).jpg";
+import tattoo9 from "@/assets/348s (23).jpg";
+import tattoo10 from "@/assets/348s (24).jpg";
+import tattoo11 from "@/assets/348s (25).jpg";
+import tattoo12 from "@/assets/348s (26).jpg";
+import tattoo13 from "@/assets/348s (27).jpg";
+import tattoo14 from "@/assets/348s (28).jpg";
+import tattoo15 from "@/assets/348s (29).jpg";
+import tattoo16 from "@/assets/348s (30).jpg";
 
 const galleryItems = [
-  { src: tattoo1, alt: "Intricate black and grey filigree design", category: "Fine Line" },
-  { src: tattoo2, alt: "Japanese waves with cherry blossoms", category: "Japanese" },
-  { src: tattoo3, alt: "Neo-traditional skull with roses", category: "Neo-Traditional" },
-  { src: tattoo4, alt: "Geometric mandala on forearm", category: "Geometric" },
-  { src: tattoo5, alt: "Photorealistic lion portrait", category: "Realism" },
-  { src: tattoo6, alt: "Polynesian-inspired tribal art", category: "Tribal" },
-  { src: tattoo7, alt: "Rose cover-up transformation", category: "Cover-Up" },
-  { src: tattoo8, alt: "Watercolor hummingbird with splashes", category: "Watercolor" },
-  // Duplicate for fuller gallery
-  { src: tattoo5, alt: "Realistic animal portrait work", category: "Realism" },
-  { src: tattoo1, alt: "Delicate ornamental linework", category: "Fine Line" },
-  { src: tattoo3, alt: "Bold traditional color work", category: "Neo-Traditional" },
-  { src: tattoo4, alt: "Sacred geometry patterns", category: "Geometric" },
+  { src: tattoo1, alt: "Custom Tattoo Art 1" },
+  { src: tattoo2, alt: "Custom Tattoo Art 2" },
+  { src: tattoo3, alt: "Custom Tattoo Art 3" },
+  { src: tattoo4, alt: "Custom Tattoo Art 4" },
+  { src: tattoo5, alt: "Custom Tattoo Art 5" },
+  { src: tattoo6, alt: "Custom Tattoo Art 6" },
+  { src: tattoo7, alt: "Custom Tattoo Art 7" },
+  { src: tattoo8, alt: "Custom Tattoo Art 8" },
+  { src: tattoo9, alt: "Custom Tattoo Art 9" },
+  { src: tattoo10, alt: "Custom Tattoo Art 10" },
+  { src: tattoo11, alt: "Custom Tattoo Art 11" },
+  { src: tattoo12, alt: "Custom Tattoo Art 12" },
+  { src: tattoo13, alt: "Custom Tattoo Art 13" },
+  { src: tattoo14, alt: "Custom Tattoo Art 14" },
+  { src: tattoo15, alt: "Custom Tattoo Art 15" },
+  { src: tattoo16, alt: "Custom Tattoo Art 16" },
 ];
 
 const GalleryPage = () => {
@@ -40,7 +52,7 @@ const GalleryPage = () => {
           <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {galleryItems.map((item, i) => (
               <motion.div
-                key={`${item.category}-${i}`}
+                key={`gallery-item-${i}`}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}

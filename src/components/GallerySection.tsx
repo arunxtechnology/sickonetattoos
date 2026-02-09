@@ -49,8 +49,6 @@ const GallerySection = () => {
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="relative group aspect-square overflow-hidden cursor-pointer"
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
             >
               <img
                 src={item.src}
